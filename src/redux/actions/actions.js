@@ -26,7 +26,7 @@ export const getGames = () => {
       payload: true,
     });
 
-    const res = await axios.get("https://api-zgamez-production.up.railway.app/games");
+    const res = await axios.get("/games");
     return dispatch({
       type: GET_GAMES,
       payload: res.data,
@@ -53,7 +53,7 @@ export const searchGame = (searchInput) => {
     });
 
     const res = await axios.get(
-      `https://api-zgamez-production.up.railway.app/games/videogames/name?name=${searchInput}`
+      `/games/videogames/name?name=${searchInput}`
       );
       
 
@@ -73,7 +73,7 @@ export const searchGame = (searchInput) => {
 
 export const gameDetail = (id) => {
   return async function (dispatch) {
-    const res = await axios.get(`https://api-zgamez-production.up.railway.app/games/${id}`);
+    const res = await axios.get(`/games/${id}`);
 
     return dispatch({
       type: GAME_DETAILS,
@@ -90,7 +90,7 @@ export const createvideoGames = (game) => {
   return async function (dispatch) {
 
     
-    const res = await axios.post(`https://api-zgamez-production.up.railway.app/games/new`, game)
+    const res = await axios.post(`/games/new`, game)
    
     return dispatch({
       type: CREATE_GAME,
@@ -103,7 +103,7 @@ export const getGenresall = () => {
   return async function (dispatch) {
    
    
-      const res = await axios.get(`https://api-zgamez-production.up.railway.app/genres/all`)
+      const res = await axios.get(`/genres/all`)
    
     return dispatch({
       type: GET_ALL_GENRES,
