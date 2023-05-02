@@ -63,7 +63,7 @@ const Filtered = ( ) => {
 
 
       <div className="buttonfilteredall isDisable">
-        <button onClick={handleClickFitlered} className={typeFiltered === '' ? "isDisableFilter" : ''}>Aplicar Filtros</button>
+        <button onClick={handleClickFitlered} /* className={typeFiltered === '' ? "isDisableFilter" : ''} */>Aplicar Filtros</button>
       </div>
     </div>
   );
